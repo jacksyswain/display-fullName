@@ -13,23 +13,28 @@ export default function App() {
   }
   const handleSubmit=(e)=>{
      e.preventDefault(); 
+     if(lastName.length>0 && firstName.length>0){
     setFullName(`${firstName} ${lastName}`);
+     }
   }
-  const isFormValid = firstName.trim() && lastName.trim();
+  
   return (
     <div className="App">
       <h2> Display Full Name </h2>
       <form onSubmit={handleSubmit}>
+      <label htmlFor="firstName" >First Name:</label>
                 <input
                     type="text"
-                    placeholder="First Name"
+                    
                     value={firstName}
                     onChange={handleFirstNameChange}
                    
                 />
+                <br/>
+                <label htmlFor="laststName" >Last Name:</label>          
                 <input
                     type="text"
-                    placeholder="Last Name"
+                    
                     value={lastName}
                     onChange={handleLastNameChange}
                    
@@ -37,7 +42,7 @@ export default function App() {
                 <br/>
                 <button
                     type="submit"
-                    disabled={!isFormValid}
+                    
                   
                 >
                     Submit
