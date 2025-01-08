@@ -19,8 +19,8 @@ export default function App() {
   }
   
   return (
-    <div className="App">
-      <h2> Display Full Name </h2>
+    <div >
+      <h2> Full Name Display </h2>
       <form onSubmit={handleSubmit}>
       <label htmlFor="firstName" >First Name:</label>
                 <input
